@@ -1,8 +1,7 @@
-security:
-  oauth2:
+facebook:
     client:
-      clientId:
-      clientSecret:
+      clientId: <Your Facebook API Client ID>
+      clientSecret: <Your Facebook ClientSecret Code>
       accessTokenUri: https://graph.facebook.com/oauth/access_token
       userAuthorizationUri: https://www.facebook.com/dialog/oauth
       tokenName: oauth_token
@@ -14,3 +13,7 @@ security:
 spring:
   main:
     allow-bean-definition-overriding: true
+
+logging:
+  level:
+    org.springframework.security: DEBUG
