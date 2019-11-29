@@ -1,7 +1,20 @@
+#아래에 security설정은 우리가 Service Provider로부터 필요한 facebook.client*이나 github.client*과 동일하다.
+#Service Provider를 우리 앱에서 사용하기 위해 우리는 클라이언트 id와 secret을 받아 등록해주어야 한다.
+#우리의 경우, 이미 똑같은 기능을 제공하고 있기 때문에, 작동확인을 위한 하나의 클라이언트가 필요하기 때문에
+#아래에 설정을 추가하였다.
+
+security:
+  oauth2:
+    client:
+      client-id: acme
+      client-secret: acmesecret
+      scope: read,write
+      auto-approve-scopes: '.*'
+
 facebook:
     client:
-      clientId: <Your Facebook API Client ID>
-      clientSecret: <Your Facebook ClientSecret Code>
+      clientId: 459650264683244
+      clientSecret: f58e0a207c436f10476495c4aa3f9dae
       accessTokenUri: https://graph.facebook.com/oauth/access_token
       userAuthorizationUri: https://www.facebook.com/dialog/oauth
       tokenName: oauth_token
@@ -11,14 +24,13 @@ facebook:
       userInfoUri: https://graph.facebook.com/me
 github:
   client:
-    clientId: <Your GitHub API Client ID>
-    clientSecret: <Your GitHub ClientSecret Code>
+    clientId: 613ec95d0143b4e1472c
+    clientSecret: ef19aab2565c3bf9aa9d6cb4f8ae31ff4ba9d493
     accessTokenUri: https://github.com/login/oauth/access_token
     userAuthorizationUri: https://github.com/login/oauth/authorize
     clientAuthenticationScheme: form
   resource:
     userInfoUri: https://api.github.com/user
-
 
 spring:
   main:
